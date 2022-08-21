@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 1px solid rgb(134, 31, 31);
+    width: 90%;
+    max-width: 600px;
+    height: 600px;
+    margin: 30px auto;
+    display: grid;
+    align-items: stretch;/*por defecto es stretch,alinea en forma vertical
+                           justify_items: alinea en forma horizontal*/
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);/*representa la cantidad de columnas de la grilla*//*la funcion repeat indica en el primer parametro la cantidad de veces que se va a repetir el contenido ,en el segundo,cuantas fraciones del espacio total va a ocupar*/
+    grid-template-rows: repeat(4, 1fr);/*representa la cantidad de columnas de la grilla*/
+    gap: 20px;/*espaciado entre filas y columnas 
+                row-gap: indica el espaciado solo en las filas y column-gap el espaciado entre las columnas en el caso que se necesite dar una medida distinta a cada caso*/
+    grid-template-areas: /*otra manera de dar el posicionamiento de cada sector de la grilla*/
+    "hijo1 hijo1 hijo2"/*cada fila es representada entre comillas y las columnas asignandole un nombre al elemento, si se neesita dejar una sector en blanco se le asigna un . como nombre*/
+    "hijo3 hijo3 hijo2"
+    "hijo3 hijo3 hijo2"
+    "hijo4 hijo4 hijo4";
+
+
+}
+
+.hijo {
+    font-size: 2rem;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.hijo1 {
+    background-color: aqua;
+    grid-area: hijo1;
+    
+}
+
+.hijo2 {
+    background-color: tomato;
+    grid-area:hijo2 ;
+
+}
+
+.hijo3 {
+    background-color: yellowgreen;
+  grid-area: hijo3;
+
+}
+
+.hijo4 {
+    background-color: purple;
+    grid-area: hijo4;
+   
+}
